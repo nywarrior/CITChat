@@ -1,0 +1,148 @@
+﻿<!-- Don't cache this page so we don't have to keep clearing the cache during development. -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+@model CITChat.Models.LoginModel
+@{
+    ViewBag.Title = "CIT Chat";
+}
+@functions{
+
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        return cookieToken + ":" + formToken;
+    }
+}
+
+<header>
+    <h1>@ViewBag.Title</h1>
+</header>
+<div id="main-content">
+@if (@User.Identity.IsAuthenticated)
+{
+    <div data-bind="visible: isLoggedIn">
+        <script>
+            isLoggedIn = true;
+        </script>
+        <p class="error" data-bind="text: error"></p>
+        <input id="antiForgeryToken" type="hidden" value="@GetAntiForgeryToken()" />
+        <button data-bind="click: addConversation">Add Conversation</button>
+        <section id="conversations" data-bind="foreach: conversations, visible: conversations().length > 0">
+            <div class="conversation">
+                <header>
+                    <form data-bind="validate: true">
+                        <input class="required" data-bind="value: title, selected: isEditingConversationTitle, blurOnEnter: true" />
+                    </form>
+                    Started: <div data-bind="text: startDateTimeDisplayString" />
+                </header>
+                <a href="#" class="deleteConversation" data-bind="click: $parent.deleteConversation">X</a>
+                <hr/>Users:
+                <div data-bind="foreach: users">
+                    <label class="user" data-bind="text: userName" />
+                </div>
+                <!-- $data is the conversation. -->
+                <!-- should use getOtherUsers once it is fixed -->
+                <div data-bind="visible: $parent.allUsers().length > users.length">
+                    <select id="userToAdd" data-bind="foreach: $parent.allUsers()">
+                        <option data-bind="value: userId, text: userName"></option>
+                    </select>
+                    <button data-bind="click: addUserToConversation">Add</button>
+                </div>
+                <!--
+                    <div data-bind="visible: (users.length < allUsers.length)">
+                    </div>
+                    -->
+                <hr/>Messages:
+                <ul data-bind="foreach: messages">
+                    <li>
+                        <table>
+                            <tr>
+                                <td>
+                                    <!--
+                                        <input type="checkbox" data-bind="checked: isDone" />
+                                        -->
+                                    <p class="content" data-bind="text: content" />
+                                </td>
+                                <td class="translatedContent">
+                                    --> <label class="translatedContent" data-bind="text: translatedContent" />
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- <a href="#" data-bind="click: $parent.deleteMessage">X</a> -->
+                        <p class="error" data-bind="visible: errorMessage, text: errorMessage"></p>
+                    </li>
+                </ul>
+                <form data-bind="submit: addMessage">
+                    <input class="addMessage" type="text" data-bind="value: newMessageContent, placeholder: 'Type here to add', blurOnEnter: true, event: { blur: addMessage }" />
+                </form>
+                <p class="error" data-bind="visible: errorMessage, text: errorMessage"></p>
+            </div>
+        </section>
+    </div>
+}
+else
+{
+    <div data-bind="visible: ! isLoggedIn">
+        <script>
+            isLoggedIn = false;
+        </script>
+        <div class="conversation" id="loginPanel">
+            <section id="localLoginPanel">
+                <h2>Log in</h2>
+                @Html.Partial("_Login")
+            </section>
+            <section id="socialLoginPanel">
+                <h2>Log in using another service</h2>
+                @Html.Action("ExternalLoginsList", "Account", new {ViewBag.ReturnUrl})
+            </section>
+            <p>First time here? <a id="showRegister">Sign up</a></p>
+        </div>
+        <div class="conversation" id="registerPanel">
+            <h2>Sign up</h2>
+            @Html.Partial("_Register")
+            <p>Already signed up? <a id="showLogin">Log in</a></p>
+        </div>
+    </div>
+}
+    </div>
+@section scripts
+{
+    <!--Script references. -->
+    <!--The jQuery library is required and is referenced by default in _Layout.cshtml. -->
+    <!--Reference the SignalR library. -->
+    <script src="~/Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <!--Reference the autogenerated SignalR hub script. -->
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript">
+        $(function() {
+            if ($.connection != null) {
+                // Start the connection.
+                // Declare a proxy to reference the hub. 
+                var chatHub = $.connection.cITChatHub;
+                if (chatHub != null) {
+                    chatHub.client.conversationChanged = function(conversationId) {
+                        //if (hasConversation(conversationId)) {
+                        // Refresh the page here.
+                        // window.location.reload();
+                        var newUserName = "@HttpContext.Current.User.Identity.Name";
+                        var regExp = /\?userName=\S+/;
+                        var url = window.location.toString();
+                        var newUrl = url.replace(regExp, "");
+                        newUrl += "?userName='" + newUserName + "'";
+                        window.location.replace(newUrl);
+                    };
+                    var hub = $.connection.hub;
+                    if (hub != null) {
+                        hub.start();
+                    }
+                }
+            }
+        });
+    </script>
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/conversation")
+}

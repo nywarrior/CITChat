@@ -1,0 +1,10 @@
+c:\Source\CITChat\CITChat.Models\bin\Debug\CITChat.Models.dll.config
+c:\Source\CITChat\CITChat.Models\bin\Debug\CITChat.Models.dll
+c:\Source\CITChat\CITChat.Models\bin\Debug\CITChat.Models.pdb
+c:\Source\CITChat\CITChat.Models\bin\Debug\EntityFramework.dll
+c:\Source\CITChat\CITChat.Models\bin\Debug\EntityFramework.SqlServer.dll
+c:\Source\CITChat\CITChat.Models\bin\Debug\EntityFramework.xml
+c:\Source\CITChat\CITChat.Models\bin\Debug\EntityFramework.SqlServer.xml
+c:\Source\CITChat\CITChat.Models\obj\Debug\CITChat.Models.csprojResolveAssemblyReference.cache
+c:\Source\CITChat\CITChat.Models\obj\Debug\CITChat.Models.dll
+c:\Source\CITChat\CITChat.Models\obj\Debug\CITChat.Models.pdb

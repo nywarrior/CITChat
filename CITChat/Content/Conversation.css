@@ -1,0 +1,125 @@
+.conversation {
+    background-color: black;
+    border-color: green;
+    border-style: solid;
+    border-width: 5px;
+    /*
+    -moz-box-shadow: 10px 10px 9px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow: 10px 10px 9px rgba(0, 0, 0, 0.22);
+    box-shadow: 10px 10px 9px rgba(0, 0, 0, 0.22);
+    */
+    color: white;
+    display: inline-block;
+    margin: 1em;
+    min-height: 280px;
+    padding-top: 8px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    width: 280px;
+}
+
+.conversation:before { /*
+    border-color: #f6f6c7 #fff;
+    border-style: solid;
+    border-width: 0 0 24px 24px;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 0;
+        */ }
+
+.conversation header { z-index: auto; }
+
+.conversation header input, .conversation header input:focus,
+.conversation ul input, .conversation ul input:focus, .addMessage {
+    font-family: 'Bradley Hand ITC';
+    outline: none;
+}
+
+.conversation header input {
+    background-color: white;
+    border-color: black;
+    color: black;
+    font-size: 1.8em;
+    text-align: center;
+    width: 95%;
+}
+
+.conversation ul {
+    background-color: black;
+    color: white;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 12px;
+}
+
+.addMessage {
+    background-color: white;
+    border-color: black;
+    color: black;
+    display: block;
+    margin-left: 25px;
+    padding: 0;
+}
+
+.conversation input[type=text], .addMessage {
+    background-color: white;
+    border-color: black;
+    color: black;
+    width: 200px;
+}
+
+.conversation input[disabled] {
+    background-color: gray;
+    border-color: gray;
+    color: black;
+    text-decoration: line-through;
+}
+
+.conversation input.user[disabled] {
+    background-color: black;
+    color: white;
+    font: .8em verdana;
+    text-decoration: none;
+}
+
+.conversation a {
+    background-color: black;
+    color: silver;
+    font: .8em verdana;
+    text-decoration: none;
+}
+
+.conversation a.deleteConversation {
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    background-color: black;
+    border-radius: 20px;
+    color: silver;
+    display: inline-block;
+    font-weight: bold;
+    height: 20px;
+    position: absolute;
+    right: -10px;
+    text-decoration: none;
+    top: -5px;
+    width: 20px;
+}
+
+.messageInput::-ms-clear { display: none; }
+
+.user {
+    background-color: black;
+    color: white;
+}
+
+.content {
+    background-color: black;
+    color: white;
+}
+
+.translatedContent {
+    background-color: black;
+    color: lightgreen;
+}

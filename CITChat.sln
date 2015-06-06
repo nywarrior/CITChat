@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CITChat", "CITChat\CITChat.csproj", "{FBCF1A42-ED01-4779-892B-E3A5ABC90391}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CITChat.Tests", "CITChat.Tests\CITChat.Tests.csproj", "{BC27FF5B-FF8C-4D1F-BC09-6D05A40A4EC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CITChat.Translators", "CITChat.Translators\CITChat.Translators.csproj", "{4ED5893B-1D96-4B40-A201-3F76EEB40DF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CITChat.Models", "CITChat.Models\CITChat.Models.csproj", "{C7745C35-1CA3-4CEA-9282-D5886C618F17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CITChat.Controllers", "CITChat.Controllers\CITChat.Controllers.csproj", "{E7B3F5C8-66E6-471E-8AF8-7BEE08A1029B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CITChat.Hubs", "CITChat.Hubs\CITChat.Hubs.csproj", "{1A4D53E8-F406-4FC8-9004-231CAE9E9B77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{36F84CC5-D20A-4049-B47C-3379C4E7790F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBCF1A42-ED01-4779-892B-E3A5ABC90391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBCF1A42-ED01-4779-892B-E3A5ABC90391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBCF1A42-ED01-4779-892B-E3A5ABC90391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBCF1A42-ED01-4779-892B-E3A5ABC90391}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC27FF5B-FF8C-4D1F-BC09-6D05A40A4EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC27FF5B-FF8C-4D1F-BC09-6D05A40A4EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC27FF5B-FF8C-4D1F-BC09-6D05A40A4EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC27FF5B-FF8C-4D1F-BC09-6D05A40A4EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ED5893B-1D96-4B40-A201-3F76EEB40DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED5893B-1D96-4B40-A201-3F76EEB40DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED5893B-1D96-4B40-A201-3F76EEB40DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED5893B-1D96-4B40-A201-3F76EEB40DF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7745C35-1CA3-4CEA-9282-D5886C618F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7745C35-1CA3-4CEA-9282-D5886C618F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7745C35-1CA3-4CEA-9282-D5886C618F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7745C35-1CA3-4CEA-9282-D5886C618F17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7B3F5C8-66E6-471E-8AF8-7BEE08A1029B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B3F5C8-66E6-471E-8AF8-7BEE08A1029B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7B3F5C8-66E6-471E-8AF8-7BEE08A1029B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B3F5C8-66E6-471E-8AF8-7BEE08A1029B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A4D53E8-F406-4FC8-9004-231CAE9E9B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A4D53E8-F406-4FC8-9004-231CAE9E9B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A4D53E8-F406-4FC8-9004-231CAE9E9B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A4D53E8-F406-4FC8-9004-231CAE9E9B77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:myb4gonnqs.database.windows.net,1433;&#xD;&#xA;         Database=CITChat;&#xD;&#xA;         User ID=CITChatUser@myb4gonnqs;&#xD;&#xA;         Password=1dentity!;&#xD;&#xA;         Trusted_Connection=False;&#xD;&#xA;         Encrypt=True;&#xD;&#xA;         Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Source\\CITChat\\CITChat\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

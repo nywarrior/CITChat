@@ -1,0 +1,236 @@
+﻿body, input, button {
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-size: 1.2em;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    margin: 1em auto;
+    max-width: 980px; /*Remove this to make it full screen*/
+}
+
+button, input[type=submit] {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/*#region Header */
+
+header {
+    margin: 0 .7em;
+    position: relative;
+    z-index: -1;
+}
+
+header p {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+#userSettings { float: right; }
+
+#userSettings > form:before { content: ' | '; }
+
+#userSettings form { display: inline; }
+
+#menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu li { display: inline-block; }
+
+#menu li:not(:first-child) { margin-left: .8em; }
+
+/*#endregion */
+
+/*#region forms */
+
+#changePasswordForm input,
+#registerForm input,
+#loginForm input {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+}
+
+#changePasswordForm input[type=text], #changePasswordForm input[type=password],
+#registerForm input[type=text], #registerForm input[type=password],
+#loginForm input[type=text], #loginForm input[type=password] {
+    background: white;
+    width: 220px;
+}
+
+#loginForm input[type=checkbox] { border: none; }
+
+#changePasswordForm input[type=submit] { margin-bottom: .8em; }
+
+#registerPanel {
+    display: none;
+    float: left;
+    padding: 25px;
+    position: relative;
+    text-align: left;
+}
+
+#loginPanel {
+    display: block;
+    float: left;
+    padding: 25px;
+    position: relative;
+    text-align: left;
+    width: 600px;
+}
+
+#registerPanel h2,
+#loginPanel h2 {
+    margin: 0;
+    padding-bottom: .5em;
+}
+
+#registerPanel a,
+#loginPanel a {
+    color: blue;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#registerPanel p,
+#loginPanel p { clear: both; }
+
+#localLoginPanel {
+    border-right: solid 2px #c8c8c8;
+    float: left;
+    text-align: left;
+    width: 45%;
+}
+
+#socialLoginPanel {
+    float: left;
+    margin-left: 40px;
+    text-align: left;
+    width: 45%;
+}
+
+#socialLoginPanel h2 { margin-bottom: 5px; }
+
+#socialLoginList button { margin-bottom: 12px; }
+
+#externalLogins {
+    padding-left: 25px;
+    text-align: left;
+}
+
+fieldset {
+    border: none;
+    display: inline;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+fieldset legend { display: none; }
+
+fieldset label:not(.checkbox) {
+    display: block;
+    text-align: left;
+}
+
+fieldset ol {
+    list-style: none;
+    margin: 0 0 8px 0;
+    padding: 0;
+}
+
+fieldset ol li { padding-bottom: 5px; }
+
+ol.round {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/*#endregion */
+
+#main-content {
+    min-height: 400px;
+    text-align: center;
+}
+
+/*#region info and errors */
+
+.error {
+    color: red;
+    float: none;
+    padding-left: .5em;
+    vertical-align: top;
+}
+
+.validation-summary-errors {
+    color: red;
+    font-size: .8em;
+    list-style: none;
+    width: 220px;
+}
+
+.validation-summary-errors ul {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/*#endregion */
+
+/*#region Unauthorized */
+
+#unauthorized {
+    margin: 3em 0;
+    text-align: center;
+}
+
+#unauthorized ul {
+    list-style: none;
+    margin: 3em 0;
+    padding: 0;
+}
+
+#unauthorized li {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #dedede;
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 6px 20px;
+}
+
+#unauthorized li:first-child { margin-right: 2em; }
+
+/*#endregion */
+
+/*#region Footer */
+
+footer {
+    clear: both;
+    margin: 5em 5em .7em 0;
+}
+
+/*#endregion */
+
+@media only screen and (max-width: 600px) {
+    body { margin: .2em 0; }
+
+    header {
+        clear: both;
+        text-align: center;
+    }
+}

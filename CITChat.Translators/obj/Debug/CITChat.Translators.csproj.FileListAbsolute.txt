@@ -1,0 +1,5 @@
+c:\Source\CITChat\CITChat.Translators\bin\Debug\CITChat.Translators.dll
+c:\Source\CITChat\CITChat.Translators\bin\Debug\CITChat.Translators.pdb
+c:\Source\CITChat\CITChat.Translators\obj\Debug\CITChat.Translators.csprojResolveAssemblyReference.cache
+c:\Source\CITChat\CITChat.Translators\obj\Debug\CITChat.Translators.dll
+c:\Source\CITChat\CITChat.Translators\obj\Debug\CITChat.Translators.pdb

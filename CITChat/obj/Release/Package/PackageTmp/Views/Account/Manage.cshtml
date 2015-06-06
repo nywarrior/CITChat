@@ -1,0 +1,37 @@
+﻿@model CITChat.Models.LocalPasswordModel
+@{
+    ViewBag.Title = "Manage Account";
+}
+
+<header>
+    <h1>@ViewBag.Title</h1>
+</header>
+
+<div id="main-content">
+    <p class="message-success">@ViewBag.StatusMessage</p>
+
+    <p>You're logged in as <strong>@Request.QueryString["UserName"]</strong>.</p>
+    <p>@Html.ActionLink("Back to CIT Chat", "Index", "Home")</p>
+
+    <section class="conversation">
+        @if (ViewBag.HasLocalPassword)
+        {
+            @Html.Partial("_ChangePasswordPartial")
+        }
+        else
+        {
+            @Html.Partial("_SetPasswordPartial")
+        }
+    </section>
+
+    <section class="conversation" id="externalLogins">
+        @Html.Action("RemoveExternalLogins")
+
+        <h3>Add an external login</h3>
+        @Html.Action("ExternalLoginsList", new {ViewBag.ReturnUrl})
+    </section>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

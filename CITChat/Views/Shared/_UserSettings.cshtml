@@ -1,0 +1,15 @@
+﻿@{
+    string loginUserName = Request.QueryString["UserName"];
+    bool showHelloMessage = Request.IsAuthenticated && (!string.IsNullOrEmpty(loginUserName));
+}
+@if (@showHelloMessage)
+{
+    <text>
+        Hello, @Html.ActionLink(loginUserName, "Manage", "Account", routeValues: new {area = ""}, htmlAttributes: new {@class = "username", title = "Manage"})
+        @using (Html.BeginForm("LogOff", "Account", new {area = ""}, FormMethod.Post, new {id = "logoutForm"}))
+        {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+        }
+    </text>
+}
